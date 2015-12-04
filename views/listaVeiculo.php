@@ -52,7 +52,7 @@
                             <td><?= $v->MODELO ?></td>
                             <td><?= $v->COR ?></td>
                             <td><?= $v->RENAVAM ?></td>
-                            <td><button class="btn btn-danger" type="button">DELETAR</button></td>
+                            <td><a href="<?php echo  base_url('index.php/Controlador/deleteveiculo/'.$v->CODIGO); ?>"class="btn btn-danger">DELETAR</a></td>
                         </tr>
                         <?php } ?>
                         </tr>

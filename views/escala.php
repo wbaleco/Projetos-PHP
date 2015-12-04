@@ -53,7 +53,8 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label for="hora">Hora: </label>
-                                <input class="form-control" id="hora" name="hora" placeholder="Informe a hora..." required="" type="text">
+                                <input class="form-control"  id="hora" name="hora" required type="time">
+                                
                             </div>
                         </div>
                     </div>

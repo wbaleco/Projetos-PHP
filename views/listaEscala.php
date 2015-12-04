@@ -18,7 +18,7 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <div class="col-md-12">
                     <h1 class="page-header text-muted">
-                        VEÍCULOS CADASTRADOS</h1>
+                        VIAGENS ESCALADAS</h1>
                 </div>
 
                 <table class="table table-striped table-hover table-bordered">
@@ -29,8 +29,8 @@
                             <th>CLIENTE</th>
                             <th>MOTORISTA</th>
                             <th>DATA</th>
-                            <th>HORA</th>
                             <th>LOCAL</th>
+                            <th>HORA</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -39,12 +39,12 @@
                             <?php foreach ($escala as $m ) { ?>
                         <tr>
 
-                            <td><?= $m->CLIENTE ?></td>
-                            <td><?= $m->MOTORISTA ?></td>
-                            <td><?= $m->DATA ?></td>
-                            <td><?= $m->HORA ?></td>
-                            <td><?= $m->LOCAL ?></td>
-                            <td><button class="btn btn-danger" type="button">DELETAR</button></td>
+                            <td><?php echo $m->CODIGO; ?></td>
+                            <td><?php echo $m->MOTORISTA; ?></td>
+                            <td><?php echo $m->DATA; ?></td>
+                            <td><?php echo $m->LOCAL; ?></td>
+                             <td><?php echo $m->HORA; ?></td>
+                            <td><a class="btn btn-danger" href="<?php echo base_url('index.php/Controlador/deleteescala/'.$m->CODIGO); ?>">DELETAR</a></td>
                         </tr>
                         <?php } ?>
                         </tr>
@@ -58,12 +58,3 @@
 
 </html>
 
-CLIENTE = $CLIENTE; 
-        $this->MOTORISTA = $MOTORISTA; 
-        $this->DATA = $DATA;
-        $this->HORA = $HORA;
-        $this->LOCAL = $LOCAL;
-         $this->HORA
-         
-         
-         

@@ -69,6 +69,15 @@ class Controlador extends CI_Controller {
 		$data['usuario'] = $usuario;
 		$this->load->view('listaUsuario',$data);
 	}
+		public function deleteusuario(){
+		require_once APPPATH."models/user.php"; // aponta onde esta a classe 
+		$this->load->model('model');
+		$m = $this->model;
+		
+		$id_usuario = $this->uri->segment(3); // 3 parametro da url
+	    $m->deleteUsuario( $id_usuario );
+	
+	}
 	
 	public function cadastromotorista(){
 		require_once APPPATH."models/motorista.php";
@@ -89,12 +98,19 @@ class Controlador extends CI_Controller {
 			$this->load->view('listaMotorista',$data);
 	}
 	
-		public function cadastrocliente(){
+	public function deletemotorista(){
+		require_once APPPATH."models/motorista.php"; // aponta onde esta a classe 
+		$this->load->model('model');
+		$m = $this->model;
+		$CODIGO = $this->uri->segment(3); // 3 parametro da url
+	    $m->deleteMotorista( $CODIGO );
+	
+	}
+	
+	public function cadastrocliente(){
 		require_once APPPATH."models/cliente.php";
 		$this->load->model('model');
 		$m = $this->model;
-		
-		
 		$m->insertCliente(new Cliente($_POST['cliente'],$_POST['cnpj'],$_POST['inscricao'],$_POST['endereco'],$_POST['bairro'],$_POST['cidade'],$_POST['estado'],$_POST['cep'],$_POST['email'],$_POST['telefone']));
 	
 			
@@ -103,13 +119,15 @@ class Controlador extends CI_Controller {
 		require_once APPPATH."models/cliente.php"; // aponta onde esta a classe 
 		$this->load->model('model');
 		$m = $this->model;
-		
 		$codigo = $this->uri->segment(3); // 3 parametro da url
-		
-		$cliente = $m->getClienteByCODIGO( $codigo );
-		
-		
-		$m->deleteCliente( $cliente );
+		$m->deleteCliente( $codigo );
+	}
+	public function deleteescala(){
+		require_once APPPATH."models/escala.php"; // aponta onde esta a classe 
+		$this->load->model('model');
+		$m = $this->model;
+		$CODIGO = $this->uri->segment(3); // 3 parametro da url
+	    $m->deleteEscala( $CODIGO );
 	
 	}
 	
@@ -117,28 +135,26 @@ class Controlador extends CI_Controller {
 		require_once APPPATH."models/escala.php";
 		$this->load->model('model');
 		$m = $this->model;
-		$m->insertEscala(new Escala($_POST['nome'],$_POST['motorista'],$_POST['data'],$_POST['hora'],$_POST['local']));
+		$m->insertEscala(new Escala($_POST['nome'],$_POST['motorista'],$_POST['data'],$_POST['local'],$_POST['hora']));
 	}
-		public function listarEscala(){
-		require_once APPPATH."models/escala.php";//Pasta model e o model que representa a classe.
-		$this->load->model('model');//Carrega model que extends o CI_Model
-		$m = $this->model;//model
-		$cliente = $m->searchAllEscala();//Metodo que está no model model
-	
-		}
+	public function listarEscala(){
+		require_once APPPATH."models/escala.php";
+		$this->load->model('model');
+		$m = $this->model;
+		$escala = $m->searchAllEscala();   
+		$data['escala'] = $escala;
+		$this->load->view('listaEscala',$data);
+	}
 	public function listarCliente(){
 		require_once APPPATH."models/cliente.php";//Pasta model e o model que representa a classe.
 		$this->load->model('model');//Carrega model que extends o CI_Model
 		$m = $this->model;//model
 		$cliente = $m->searchAllCliente();//Metodo que está no model model
-	
-		
-			$data['cliente'] = $cliente;
-			
-			$this->load->view('listaCliente',$data);
+		$data['cliente'] = $cliente;
+		$this->load->view('listaCliente',$data);
 	}
 	
-		public function cadastroveiculo(){
+	public function cadastroveiculo(){
 		require_once APPPATH."models/veiculo.php";
 		$this->load->model('model');
 		$v = $this->model;
@@ -150,17 +166,17 @@ class Controlador extends CI_Controller {
 		$this->load->model('model');//Carrega model que extends o CI_Model
 		$v = $this->model;//model
 		$veiculo = $v->searchAllVeiculo();//Metodo que está no model model
-	
-		
-			$data['veiculo'] = $veiculo;
-			
-			$this->load->view('listaVeiculo',$data);
+		$data['veiculo'] = $veiculo;
+		$this->load->view('listaVeiculo',$data);
 	}
+	public function deleteveiculo(){
+		require_once APPPATH."models/veiculo.php"; // aponta onde esta a classe 
+		$this->load->model('model');
+		$v = $this->model;
+		$codigo = $this->uri->segment(3); // 3 parametro da url
+		$v->deleteveiculo( $codigo );
 	
-	
-	
-	
-	
+	}
 	public function auth(){
     	$email = $_POST["email"];
         $senha = $_POST["senha"];

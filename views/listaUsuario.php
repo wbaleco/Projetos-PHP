@@ -14,7 +14,7 @@
 
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
             <div class="col-md-12">
-                <h1 class="page-header ">
+                <h1 class="page-header text-muted">
                     USUÁRIOS CADASTRADO</h1>
             </div>
                 <table class="table table-striped table-hover table-bordered">
@@ -37,7 +37,7 @@
                             <td><?= $usu->nm_usuario ?></td>
                             <td><?= $usu->ds_email ?></td>
                             <td><?= $usu->ds_senha ?></td>
-                              <td><button class="btn btn-danger" type="button">DELETAR</button></td>
+                            <td><a href="<?php echo  base_url('index.php/Controlador/deleteusuario/'.$usu->id_usuario); ?>"class="btn btn-danger">DELETAR</a></td>
 
                         </tr>
                         <?php } ?>

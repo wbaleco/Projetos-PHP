@@ -26,6 +26,8 @@
                         <li><a href="<?php echo base_url();?>index.php/Controlador/listarUsuario"><span class="glyphicon glyphicon-list"></span> Usuário</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="<?php echo base_url();?>index.php/Controlador/listarVeiculo"><span class="glyphicon glyphicon-list"></span> Veículo</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="<?php echo base_url();?>index.php/Controlador/listarEscala"><span class="glyphicon glyphicon-list"></span> Escala</a></li>
                     </ul>
                 </li>
 

@@ -81,8 +81,8 @@
                 </div>
 
                 <div class="col-md-9 text-right">
-                    <input type="submit" class="btn btn-success" value="Salvar">
-                    <input type="reset" class="btn btn-default" value="Cancelar">
+                    <input type="submit" class="btn btn-success btn btn-group" value="Salvar">
+                    <input type="reset" class="btn btn-default btn btn-group" value="Cancelar">
                 </div> 
 
             </form>

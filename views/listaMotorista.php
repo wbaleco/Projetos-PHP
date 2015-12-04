@@ -17,7 +17,7 @@
 
              <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
                 <div class="col-md-12">
-                    <h1 class="page-header ">MOTORISTAS CADASTRADOS
+                    <h1 class="page-header text-muted ">MOTORISTAS CADASTRADOS
 
                     </h1>
                 </div>
@@ -50,7 +50,7 @@
                             <td><?= $m->TELEFONE ?></td>
                             <td><?= $m->CODIGO ?></td>
                             <td><?= $m->CPF ?></td>
-                            <td><button class="btn btn-danger" type="button">DELETAR</button></td>
+                            <td><a href="<?php echo  base_url('index.php/Controlador/deletemotorista/'.$m->CODIGO); ?>"class="btn btn-danger">DELETAR</a></td>
                         </tr>
                         <?php } ?>
                         </tr>

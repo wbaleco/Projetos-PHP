@@ -7,8 +7,9 @@ class Escala{
         $this->CLIENTE = $CLIENTE; 
         $this->MOTORISTA = $MOTORISTA; 
         $this->DATA = $DATA;
-        $this->HORA = $HORA;
         $this->LOCAL = $LOCAL;
+        $this->HORA = $HORA;
+        
        
     }
 }

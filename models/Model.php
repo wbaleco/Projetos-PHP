@@ -11,21 +11,21 @@ class Model extends CI_Model{
         return $query->result();
     }
     
+    public function deleteUsuario($codigo){
+        $this->db->where('id_usuario',$codigo);
+        $this->db->delete('Usuario');
+       redirect("index.php/Controlador/listarUsuario");
+    }
+    /*---------------------------------------------------*/
      public function deleteCliente($codigo){
         $this->db->where('CODIGO',$codigo);
         $this->db->delete('CADASTROCLIENTE');
-        echo ("Deletado com sucesso");
+       redirect("index.php/Controlador/listarCliente");
     }
-    
-   
-   
-    
-    
-    
     
     public function insertCliente(CLIENTE $cliente){
         $this->db->insert('CADASTROCLIENTE', $cliente);
-        echo ("Cadastro realizado com sucesso");
+        redirect("index.php/Controlador/cliente");
      }
      
     public function searchAllCliente(){
@@ -36,17 +36,22 @@ class Model extends CI_Model{
         
     public function insertMotorista(MOTORISTA $motorista){
         $this->db->insert('CADASTROMOTORISTA', $motorista);
-        echo ("Cadastro realizado com sucesso");
+         redirect("index.php/Controlador/motorista");
          }
          
         public function searchAllMotorista(){
         $query = $this->db->query("select * from CADASTROMOTORISTA");
         return $query->result();
     }
-         
+    
+    public function deleteMotorista($codigo){
+        $this->db->where('CODIGO',$codigo);
+        $this->db->delete('CADASTROMOTORISTA');
+        redirect("index.php/Controlador/listarMotorista");
+    }
     public function insertVeiculo(VEICULO $veiculo){
         $this->db->insert('CADASTROVEICULO', $veiculo);
-        echo ("Escala realizada com sucesso");
+         redirect("index.php/Controlador/veiculo");
     }
     
     public function searchAllVeiculo(){
@@ -54,15 +59,26 @@ class Model extends CI_Model{
         return $query->result();
     }
     
-     public function insertEscala(ESCALA $escala){
-        $this->db->insert('ESCALA', $escala);
-        echo ("Escala realizada com sucesso");
+    public function deleteVeiculo($codigo){
+        $this->db->where('CODIGO',$codigo);
+        $this->db->delete('CADASTROVEICULO');
+         redirect("index.php/Controlador/listarVeiculo");
     }
     
-   
-      public function searchAllEscala(){
-        $query = $this->db->query("select * from ESCALA");
-        return $query->result();
+     public function insertEscala(ESCALA $escala){
+        $this->db->insert('ESCALA', $escala);
+         redirect("index.php/Controlador/escala");
+        
+    }
+  
+       public function searchAllEscala(){
+         $query = $this->db->query("select * from ESCALA");
+         return $query->result();
+     }
+     public function deleteEscala($codigo){
+        $this->db->where('CODIGO',$codigo);
+        $this->db->delete('ESCALA');
+         redirect("index.php/Controlador/listarEscala");
     }
     
    
