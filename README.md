@@ -1,8 +1,16 @@
 
-     #Manual de instruções
+     # Manual de instruções
      
      **Cadastro**
-     >Cliente
-     >Motorista
-     >Usuário
-     >Veícu
+          > Cliente
+          > Motorista
+          > Usuário
+          > Veículo
+          
+     **Consulta**
+          > Cliente
+          > Motorista
+          > Usuário
+          >Veículo 
+          
+          
